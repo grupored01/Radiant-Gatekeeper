@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfRadiant", "WcfRadiant\WcfRadiant.csproj", "{AA38AE7C-A078-4630-BBBD-F219678434FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eAdapterAdapter Utilities", "eAdapterAdapter Utilities\eAdapterAdapter Utilities.csproj", "{8FE2D191-9019-46FD-9A45-840AAA37A0B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eAdapterClient", "eAdapterClient\eAdapterClient.csproj", "{6B82A221-3B83-427C-856A-815FEDCF4E9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eAdapterDataTypes", "eAdapterDataTypes\eAdapterDataTypes.csproj", "{EB213C22-B408-41C5-9DC9-BEA9DAE8925E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eAdapterService", "eAdapterService\eAdapterService.csproj", "{9A450CA7-28FB-4D1C-BCE3-F647A14C6268}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtensionMethods", "ExtensionMethods\ExtensionMethods.csproj", "{F11D7CC0-0BFC-47F3-A8BF-9A6A9A3E0BEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gatekeeper", "Gatekeeper\Gatekeeper.csproj", "{A7609FCA-5579-4F26-90C0-D1826DAB4B16}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA38AE7C-A078-4630-BBBD-F219678434FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA38AE7C-A078-4630-BBBD-F219678434FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA38AE7C-A078-4630-BBBD-F219678434FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA38AE7C-A078-4630-BBBD-F219678434FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FE2D191-9019-46FD-9A45-840AAA37A0B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FE2D191-9019-46FD-9A45-840AAA37A0B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FE2D191-9019-46FD-9A45-840AAA37A0B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FE2D191-9019-46FD-9A45-840AAA37A0B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B82A221-3B83-427C-856A-815FEDCF4E9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B82A221-3B83-427C-856A-815FEDCF4E9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B82A221-3B83-427C-856A-815FEDCF4E9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B82A221-3B83-427C-856A-815FEDCF4E9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB213C22-B408-41C5-9DC9-BEA9DAE8925E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB213C22-B408-41C5-9DC9-BEA9DAE8925E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB213C22-B408-41C5-9DC9-BEA9DAE8925E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB213C22-B408-41C5-9DC9-BEA9DAE8925E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A450CA7-28FB-4D1C-BCE3-F647A14C6268}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A450CA7-28FB-4D1C-BCE3-F647A14C6268}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A450CA7-28FB-4D1C-BCE3-F647A14C6268}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A450CA7-28FB-4D1C-BCE3-F647A14C6268}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F11D7CC0-0BFC-47F3-A8BF-9A6A9A3E0BEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F11D7CC0-0BFC-47F3-A8BF-9A6A9A3E0BEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F11D7CC0-0BFC-47F3-A8BF-9A6A9A3E0BEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F11D7CC0-0BFC-47F3-A8BF-9A6A9A3E0BEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7609FCA-5579-4F26-90C0-D1826DAB4B16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7609FCA-5579-4F26-90C0-D1826DAB4B16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7609FCA-5579-4F26-90C0-D1826DAB4B16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7609FCA-5579-4F26-90C0-D1826DAB4B16}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

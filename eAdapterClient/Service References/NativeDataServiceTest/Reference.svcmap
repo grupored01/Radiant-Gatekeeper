@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="97c2f62f-8d73-468e-aefc-40a4212583f0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://www01-ote.ote.local/Train/NativeDataTransfer/EnterpriseNativeDataService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="EnterpriseNativeDataService.xsd" MetadataType="Schema" ID="c35ac629-f2cd-45ba-b37e-a11dfb4cd2cc" SourceId="1" SourceUrl="http://www01-ote.ote.local/Train/NativeDataTransfer/EnterpriseNativeDataService.svc?xsd=xsd1" />
+    <MetadataFile FileName="EnterpriseNativeDataService.wsdl" MetadataType="Wsdl" ID="58fbf335-e27c-4e4f-ad58-270e1ab7ad02" SourceId="1" SourceUrl="http://www01-ote.ote.local/Train/NativeDataTransfer/EnterpriseNativeDataService.svc?wsdl" />
+    <MetadataFile FileName="EnterpriseNativeDataService1.xsd" MetadataType="Schema" ID="e458a29a-832a-42a2-93d9-0a8638ef11ab" SourceId="1" SourceUrl="http://www01-ote.ote.local/Train/NativeDataTransfer/EnterpriseNativeDataService.svc?xsd=xsd0" />
+    <MetadataFile FileName="EnterpriseNativeDataService2.xsd" MetadataType="Schema" ID="559a0faf-a538-49eb-af00-cb9aaecae4b0" SourceId="1" SourceUrl="http://www01-ote.ote.local/Train/NativeDataTransfer/EnterpriseNativeDataService.svc?xsd=xsd2" />
+    <MetadataFile FileName="EnterpriseNativeDataService.disco" MetadataType="Disco" ID="d1d9a676-ac39-48b7-b25c-2bb63d09fe29" SourceId="1" SourceUrl="http://www01-ote.ote.local/Train/NativeDataTransfer/EnterpriseNativeDataService.svc?disco" />
+    <MetadataFile FileName="EnterpriseNativeDataService1.wsdl" MetadataType="Wsdl" ID="691174fa-f7a0-4b9c-818e-73428d2def3e" SourceId="1" SourceUrl="http://www01-ote.ote.local/Train/NativeDataTransfer/EnterpriseNativeDataService.svc?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

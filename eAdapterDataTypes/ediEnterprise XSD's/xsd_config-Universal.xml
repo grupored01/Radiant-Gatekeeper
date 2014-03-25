@@ -1,0 +1,11 @@
+<xsd xmlns='http://microsoft.com/dotnet/tools/xsd/'>
+<generateClasses options='none' language='CS' namespace='OTE.eAdapter.DataTypes.Universal'>
+	<schema>UniversalCommon.xsd</schema>
+  <schema>UniversalEvent.xsd</schema>
+  <schema>UniversalInterchange.xsd</schema>
+  <schema>UniversalSchedule.xsd</schema>
+	<schema>UniversalShipment.xsd</schema>
+	<schema>UniversalTransaction.xsd</schema>
+	<schema>UniversalTransactionBatch.xsd</schema>
+</generateClasses>
+</xsd>

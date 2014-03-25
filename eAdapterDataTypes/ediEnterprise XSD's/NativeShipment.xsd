@@ -1,0 +1,3369 @@
+<xs:schema targetNamespace="http://www.cargowise.com/Schemas/Native/2011/11" version="1.0" elementFormDefault="qualified" xmlns="http://www.cargowise.com/Schemas/Native/2011/11" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="Native.xsd" />
+  <xs:element name="Shipment" type="ShipmentData" />
+  <xs:complexType name="ShipmentData">
+    <xs:all>
+      <xs:element name="JobShipment" type="NativeShipment" />
+    </xs:all>
+    <xs:attribute name="version" type="xs:token" />
+  </xs:complexType>
+  <xs:complexType name="NativeShipment">
+    <xs:all>
+      <xs:element name="PK" minOccurs="0" type="xs:string" />
+      <xs:element name="IsCancelled" minOccurs="0" type="xs:boolean" />
+      <xs:element name="ShipmentStatus" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="UniqueConsignRef" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="InterimReceipt" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CartageWaybill" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CFSReference" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="AWBServiceLevel" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="IsNeutralMaster" minOccurs="0" type="xs:boolean" />
+      <xs:element name="ConsolReference" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="HouseBill" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="IsShipping" minOccurs="0" type="xs:boolean" />
+      <xs:element name="IsDirectBooking" minOccurs="0" type="xs:boolean" />
+      <xs:element name="IsSplitShipment" minOccurs="0" type="xs:boolean" />
+      <xs:element name="IsCFSRegistered" minOccurs="0" type="xs:boolean" />
+      <xs:element name="IsForwardRegistered" minOccurs="0" type="xs:boolean" />
+      <xs:element name="IsBooking" minOccurs="0" type="xs:boolean" />
+      <xs:element name="TranshipToOtherCFS" minOccurs="0" type="xs:boolean" />
+      <xs:element name="BookingReference" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="A_BKD" minOccurs="0" type="emptiableDateTime" />
+      <xs:element name="GoodsDescription" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="GoodsValue" minOccurs="0" type="xs:decimal" />
+      <xs:element name="PackingOrder" minOccurs="0" type="xs:int" />
+      <xs:element name="ReleaseType" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="A_RCV" minOccurs="0" type="emptiableDateTime" />
+      <xs:element name="E_DEP" minOccurs="0" type="emptiableDateTime" />
+      <xs:element name="E_ARV" minOccurs="0" type="emptiableDateTime" />
+      <xs:element name="ClientRequestedETA" minOccurs="0" type="emptiableDateTime" />
+      <xs:element name="INCO" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="TransportMode" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="PackingMode" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ActualVolume" minOccurs="0" type="xs:decimal" />
+      <xs:element name="DocumentedVolume" minOccurs="0" type="xs:decimal" />
+      <xs:element name="ManifestedVolume" minOccurs="0" type="xs:decimal" />
+      <xs:element name="UnitOfVolume" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ActualWeight" minOccurs="0" type="xs:decimal" />
+      <xs:element name="DocumentedWeight" minOccurs="0" type="xs:decimal" />
+      <xs:element name="ManifestedWeight" minOccurs="0" type="xs:decimal" />
+      <xs:element name="UnitOfWeight" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ActualChargeable" minOccurs="0" type="xs:decimal" />
+      <xs:element name="DocumentedChargeable" minOccurs="0" type="xs:decimal" />
+      <xs:element name="ManifestedChargeable" minOccurs="0" type="xs:decimal" />
+      <xs:element name="UnitFreightRate" minOccurs="0" type="xs:decimal" />
+      <xs:element name="TotalPackageCount" minOccurs="0" type="xs:int" />
+      <xs:element name="OuterPacks" minOccurs="0" type="xs:int" />
+      <xs:element name="NoOriginalBills" minOccurs="0" type="xs:short" />
+      <xs:element name="NoCopyBills" minOccurs="0" type="xs:short" />
+      <xs:element name="OverrideWaybillDefaults" minOccurs="0" type="xs:boolean" />
+      <xs:element name="HouseBillOfLadingType" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ShippedOnBoard" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ShippedOnBoardDate" minOccurs="0" type="emptiableDateTime" />
+      <xs:element name="HouseBillIssueDate" minOccurs="0" type="emptiableDateTime" />
+      <xs:element name="HBLAWBChargesDisplay" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="HBLContainerPackModeOverride" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="7" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ShipperCODAmount" minOccurs="0" type="xs:decimal" />
+      <xs:element name="ShipperCODPayMethod" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ExportControlRegularApprovedShipper" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="WarehouseLocation" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="10" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="InsuranceValue" minOccurs="0" type="xs:decimal" />
+      <xs:element name="VisibleTabs" minOccurs="0" type="xs:int" />
+      <xs:element name="ShipmentType" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Legacy_Support_Columns_Start" minOccurs="0" type="xs:boolean" />
+      <xs:element name="ScreeningStatus" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="InvisibleTabsXML" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="AdditionalTerms" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Phase" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="LoadingMeters" minOccurs="0" type="xs:decimal" />
+      <xs:element name="DocumentedLoadingMeters" minOccurs="0" type="xs:decimal" />
+      <xs:element name="ManifestedLoadingMeters" minOccurs="0" type="xs:decimal" />
+      <xs:element name="ExportReceivingDepot" minOccurs="0">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="Code" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="25" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="PK" minOccurs="0" type="xs:string" />
+            <xs:element name="OrgHeader" minOccurs="0">
+              <xs:complexType>
+                <xs:all>
+                  <xs:element name="Code" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="12" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PK" minOccurs="0" type="xs:string" />
+                </xs:all>
+                <xs:attribute name="Action" type="Action" />
+              </xs:complexType>
+            </xs:element>
+          </xs:all>
+          <xs:attribute name="Action" type="Action" />
+          <xs:attribute name="TableName" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ImportReleaseDepot" minOccurs="0">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="Code" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="25" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="PK" minOccurs="0" type="xs:string" />
+            <xs:element name="OrgHeader" minOccurs="0">
+              <xs:complexType>
+                <xs:all>
+                  <xs:element name="Code" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="12" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PK" minOccurs="0" type="xs:string" />
+                </xs:all>
+                <xs:attribute name="Action" type="Action" />
+              </xs:complexType>
+            </xs:element>
+          </xs:all>
+          <xs:attribute name="Action" type="Action" />
+          <xs:attribute name="TableName" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="HandledOnBehalfOfForwarder" minOccurs="0">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="Code" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="12" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="PK" minOccurs="0" type="xs:string" />
+          </xs:all>
+          <xs:attribute name="Action" type="Action" />
+          <xs:attribute name="TableName" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="TranshipAgent" minOccurs="0">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="Code" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="12" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="PK" minOccurs="0" type="xs:string" />
+          </xs:all>
+          <xs:attribute name="Action" type="Action" />
+          <xs:attribute name="TableName" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeliveryAgent" minOccurs="0">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="Code" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="12" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="PK" minOccurs="0" type="xs:string" />
+          </xs:all>
+          <xs:attribute name="Action" type="Action" />
+          <xs:attribute name="TableName" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Origin" minOccurs="0">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="Code" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="5" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="PK" minOccurs="0" type="xs:string" />
+          </xs:all>
+          <xs:attribute name="Action" type="Action" />
+          <xs:attribute name="TableName" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Destination" minOccurs="0">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="Code" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="5" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="PK" minOccurs="0" type="xs:string" />
+          </xs:all>
+          <xs:attribute name="Action" type="Action" />
+          <xs:attribute name="TableName" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ServiceLevel" minOccurs="0">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="Code" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="3" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="PK" minOccurs="0" type="xs:string" />
+          </xs:all>
+          <xs:attribute name="Action" type="Action" />
+          <xs:attribute name="TableName" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="JobSailing" minOccurs="0">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="PK" minOccurs="0" type="xs:string" />
+            <xs:element name="JobVoyOrigin" minOccurs="0">
+              <xs:complexType>
+                <xs:all>
+                  <xs:element name="PortOfLoading" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string" />
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PK" minOccurs="0" type="xs:string" />
+                  <xs:element name="PortOfLoadingExternal" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="5" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="JobVoyage" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                    </xs:complexType>
+                  </xs:element>
+                </xs:all>
+                <xs:attribute name="Action" type="Action" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="JobVoyDestination" minOccurs="0">
+              <xs:complexType>
+                <xs:all>
+                  <xs:element name="PortOfDischarge" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string" />
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PK" minOccurs="0" type="xs:string" />
+                  <xs:element name="PortOfDischargeExternal" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="5" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="JobVoyage" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                    </xs:complexType>
+                  </xs:element>
+                </xs:all>
+                <xs:attribute name="Action" type="Action" />
+              </xs:complexType>
+            </xs:element>
+          </xs:all>
+          <xs:attribute name="Action" type="Action" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="BookedShippingLine" minOccurs="0">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="Code" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="12" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="PK" minOccurs="0" type="xs:string" />
+          </xs:all>
+          <xs:attribute name="Action" type="Action" />
+          <xs:attribute name="TableName" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ColoadMasterShipment" minOccurs="0">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="UniqueConsignRef" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="20" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="PK" minOccurs="0" type="xs:string" />
+          </xs:all>
+          <xs:attribute name="Action" type="Action" />
+          <xs:attribute name="TableName" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SplitSwitchShipment" minOccurs="0">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="UniqueConsignRef" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="20" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="PK" minOccurs="0" type="xs:string" />
+          </xs:all>
+          <xs:attribute name="Action" type="Action" />
+          <xs:attribute name="TableName" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ExportBroker" minOccurs="0">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="Code" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="12" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="PK" minOccurs="0" type="xs:string" />
+          </xs:all>
+          <xs:attribute name="Action" type="Action" />
+          <xs:attribute name="TableName" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ImportBroker" minOccurs="0">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="Code" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="12" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="PK" minOccurs="0" type="xs:string" />
+          </xs:all>
+          <xs:attribute name="Action" type="Action" />
+          <xs:attribute name="TableName" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WhsLocation" minOccurs="0">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="PK" minOccurs="0" type="xs:string" />
+          </xs:all>
+          <xs:attribute name="Action" type="Action" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GoodsValueCurr" minOccurs="0">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="Code" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="3" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="PK" minOccurs="0" type="xs:string" />
+          </xs:all>
+          <xs:attribute name="Action" type="Action" />
+          <xs:attribute name="TableName" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsuranceCurrency" minOccurs="0">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="Code" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="3" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="PK" minOccurs="0" type="xs:string" />
+          </xs:all>
+          <xs:attribute name="Action" type="Action" />
+          <xs:attribute name="TableName" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="FrtRateCurrency" minOccurs="0">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="Code" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="3" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="PK" minOccurs="0" type="xs:string" />
+          </xs:all>
+          <xs:attribute name="Action" type="Action" />
+          <xs:attribute name="TableName" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="TotalCountPackType" minOccurs="0">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="Code" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="3" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="PK" minOccurs="0" type="xs:string" />
+          </xs:all>
+          <xs:attribute name="Action" type="Action" />
+          <xs:attribute name="TableName" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PackType" minOccurs="0">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="Code" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="3" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="PK" minOccurs="0" type="xs:string" />
+          </xs:all>
+          <xs:attribute name="Action" type="Action" />
+          <xs:attribute name="TableName" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="JobPackLinesCollection" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="JobPackLines" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:all>
+                  <xs:element name="PK" minOccurs="0" type="xs:string" />
+                  <xs:element name="FreightMode" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ItemNo" minOccurs="0" type="xs:int" />
+                  <xs:element name="EndItemNo" minOccurs="0" type="xs:int" />
+                  <xs:element name="PackageCount" minOccurs="0" type="xs:int" />
+                  <xs:element name="LinePrice" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="Outturn" minOccurs="0" type="xs:int" />
+                  <xs:element name="OutturnedLength" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="OutturnedHeight" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="OutturnedWidth" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="OutturnedWeight" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="OutturnedVolume" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="OutturnComment" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="250" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Pillaged" minOccurs="0" type="xs:int" />
+                  <xs:element name="Damaged" minOccurs="0" type="xs:int" />
+                  <xs:element name="ActualWeight" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="ActualWeightUQ" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="2" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Length" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="Height" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="Width" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="UnitOfDimension" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="2" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ActualVolume" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="ActualVolumeUQ" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="2" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="RefNumber" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Description" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="65" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="HarmonisedCode" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="15" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="MarksAndNumbers" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string" />
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CustomAttrib1" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CustomAttrib2" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CustomAttrib3" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CustomAttrib4" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CustomDecimal1" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="CustomDecimal2" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="CustomDate1" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="CustomDate2" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="CustomFlag1" minOccurs="0" type="xs:boolean" />
+                  <xs:element name="CustomFlag2" minOccurs="0" type="xs:boolean" />
+                  <xs:element name="DetailedDescription" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string" />
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ContainerPackingOrder" minOccurs="0" type="xs:int" />
+                  <xs:element name="LoadingMeters" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="Origin" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="CommodityCode" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="4" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="PackType" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="JobPackLocCollection" minOccurs="0">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="JobPackLoc" minOccurs="0" maxOccurs="unbounded">
+                          <xs:complexType>
+                            <xs:all>
+                              <xs:element name="PK" minOccurs="0" type="xs:string" />
+                              <xs:element name="WarehouseLocation" minOccurs="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="10" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="NoPackages" minOccurs="0" type="xs:int" />
+                              <xs:element name="Weight" minOccurs="0" type="xs:decimal" />
+                              <xs:element name="WeightUW" minOccurs="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="2" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="Volume" minOccurs="0" type="xs:decimal" />
+                              <xs:element name="VolumeUV" minOccurs="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="2" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="DeliveredDate" minOccurs="0" type="emptiableDateTime" />
+                              <xs:element name="WhsLocation" minOccurs="0">
+                                <xs:complexType>
+                                  <xs:all>
+                                    <xs:element name="PK" minOccurs="0" type="xs:string" />
+                                  </xs:all>
+                                  <xs:attribute name="Action" type="Action" />
+                                </xs:complexType>
+                              </xs:element>
+                            </xs:all>
+                            <xs:attribute name="Action" type="Action" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="JobPackProductCollection" minOccurs="0">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="JobPackProduct" minOccurs="0" maxOccurs="unbounded">
+                          <xs:complexType>
+                            <xs:all>
+                              <xs:element name="PK" minOccurs="0" type="xs:string" />
+                              <xs:element name="ProductCode" minOccurs="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="35" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="ProductQuantity" minOccurs="0" type="xs:decimal" />
+                              <xs:element name="ProductUnitOfQty" minOccurs="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="3" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="JobOrderLine" minOccurs="0">
+                                <xs:complexType>
+                                  <xs:all>
+                                    <xs:element name="LineNo" minOccurs="0" type="xs:int" />
+                                    <xs:element name="SubLineNo" minOccurs="0" type="xs:int" />
+                                    <xs:element name="PK" minOccurs="0" type="xs:string" />
+                                    <xs:element name="JobOrderHeader" minOccurs="0">
+                                      <xs:complexType>
+                                        <xs:all>
+                                          <xs:element name="OrderNumber" minOccurs="0">
+                                            <xs:simpleType>
+                                              <xs:restriction base="xs:string">
+                                                <xs:maxLength value="35" />
+                                              </xs:restriction>
+                                            </xs:simpleType>
+                                          </xs:element>
+                                          <xs:element name="OrderNumberSplit" minOccurs="0" type="xs:short" />
+                                          <xs:element name="PK" minOccurs="0" type="xs:string" />
+                                          <xs:element name="Buyer" minOccurs="0">
+                                            <xs:complexType>
+                                              <xs:all>
+                                                <xs:element name="Code" minOccurs="0">
+                                                  <xs:simpleType>
+                                                    <xs:restriction base="xs:string">
+                                                      <xs:maxLength value="12" />
+                                                    </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element name="PK" minOccurs="0" type="xs:string" />
+                                              </xs:all>
+                                              <xs:attribute name="Action" type="Action" />
+                                              <xs:attribute name="TableName" type="xs:string" />
+                                            </xs:complexType>
+                                          </xs:element>
+                                        </xs:all>
+                                        <xs:attribute name="Action" type="Action" />
+                                      </xs:complexType>
+                                    </xs:element>
+                                  </xs:all>
+                                  <xs:attribute name="Action" type="Action" />
+                                </xs:complexType>
+                              </xs:element>
+                            </xs:all>
+                            <xs:attribute name="Action" type="Action" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:all>
+                <xs:attribute name="Action" type="Action" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="JobConsolCollection" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="JobConsol" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:all>
+                  <xs:element name="PK" minOccurs="0" type="xs:string" />
+                  <xs:element name="IsCancelled" minOccurs="0" type="xs:boolean" />
+                  <xs:element name="ConsolStatus" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TransportMode" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ConsolMode" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="AgentType" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="AWBServiceLevel" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="IsCFS" minOccurs="0" type="xs:boolean" />
+                  <xs:element name="IsForwarding" minOccurs="0" type="xs:boolean" />
+                  <xs:element name="IsNeutralMaster" minOccurs="0" type="xs:boolean" />
+                  <xs:element name="UniqueConsignRef" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="MasterBillNum" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="35" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ShippedOnBoardDate" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="MasterBillIssueDate" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="BookingReference" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="35" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="AgentsReference" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="35" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CustomsReference" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="35" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PrepaidCollect" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DateLastForeignPort" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="DatePortOfFirstArrival" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="DateFirstForeignPort" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="NoOriginalBills" minOccurs="0" type="xs:short" />
+                  <xs:element name="NoCopyBills" minOccurs="0" type="xs:short" />
+                  <xs:element name="OverrideWaybillDefaults" minOccurs="0" type="xs:boolean" />
+                  <xs:element name="PrintOptionForColoadsOnManifest" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PrintOptionForColoadsOnOtherDocs" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PrintOptionForPackagesOnAWB" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CustomDate1" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="CustomDate2" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="CustomFlag1" minOccurs="0" type="xs:boolean" />
+                  <xs:element name="CustomFlag2" minOccurs="0" type="xs:boolean" />
+                  <xs:element name="ConsolChargeable" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="ConsolChargeableRate" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="OverrideConsolChargeable" minOccurs="0" type="xs:boolean" />
+                  <xs:element name="TotalShipmentChargableCheck" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="TotalShipmentCountCheck" minOccurs="0" type="xs:int" />
+                  <xs:element name="TotalShipmentChargeableUnit" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="2" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TotalShipmentActWeightCheck" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="TotalShipmentActVolumeCheck" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="TotalShipmentActOtherUnit" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="2" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ReleaseType" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ScreeningStatus" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ConsolCutOffDate" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="Phase" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CorrectedConsolWeight" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="CorrectedConsolVolume" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="CorrectedConsolWeightUnit" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="2" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CorrectedConsolVolumeUnit" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="2" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Creditor" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="12" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="ArrivalUnpackCFSTransport" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="12" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="ArrivalCTOAddress" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="25" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                        <xs:element name="OrgHeader" minOccurs="0">
+                          <xs:complexType>
+                            <xs:all>
+                              <xs:element name="Code" minOccurs="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="12" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="PK" minOccurs="0" type="xs:string" />
+                            </xs:all>
+                            <xs:attribute name="Action" type="Action" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="UnpackDepotAddress" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="25" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                        <xs:element name="OrgHeader" minOccurs="0">
+                          <xs:complexType>
+                            <xs:all>
+                              <xs:element name="Code" minOccurs="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="12" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="PK" minOccurs="0" type="xs:string" />
+                            </xs:all>
+                            <xs:attribute name="Action" type="Action" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="ContainerParkEmptyReturnAddress" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="25" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                        <xs:element name="OrgHeader" minOccurs="0">
+                          <xs:complexType>
+                            <xs:all>
+                              <xs:element name="Code" minOccurs="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="12" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="PK" minOccurs="0" type="xs:string" />
+                            </xs:all>
+                            <xs:attribute name="Action" type="Action" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="DeparturePackCFSTransport" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="12" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="ContainerParkEmptyPickupAddress" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="25" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                        <xs:element name="OrgHeader" minOccurs="0">
+                          <xs:complexType>
+                            <xs:all>
+                              <xs:element name="Code" minOccurs="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="12" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="PK" minOccurs="0" type="xs:string" />
+                            </xs:all>
+                            <xs:attribute name="Action" type="Action" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="PackDepotAddress" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="25" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                        <xs:element name="OrgHeader" minOccurs="0">
+                          <xs:complexType>
+                            <xs:all>
+                              <xs:element name="Code" minOccurs="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="12" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="PK" minOccurs="0" type="xs:string" />
+                            </xs:all>
+                            <xs:attribute name="Action" type="Action" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="DepartureCTOAddress" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="25" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                        <xs:element name="OrgHeader" minOccurs="0">
+                          <xs:complexType>
+                            <xs:all>
+                              <xs:element name="Code" minOccurs="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="12" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="PK" minOccurs="0" type="xs:string" />
+                            </xs:all>
+                            <xs:attribute name="Action" type="Action" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="LoadPort" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="5" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="DischargePort" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="5" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="FirstForeignPort" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="5" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="LastForeignPort" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="5" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="PortOfFirstArrival" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="5" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="SendingForwarderAddress" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="25" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                        <xs:element name="OrgHeader" minOccurs="0">
+                          <xs:complexType>
+                            <xs:all>
+                              <xs:element name="Code" minOccurs="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="12" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="PK" minOccurs="0" type="xs:string" />
+                            </xs:all>
+                            <xs:attribute name="Action" type="Action" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="CreditorAddress" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="25" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                        <xs:element name="OrgHeader" minOccurs="0">
+                          <xs:complexType>
+                            <xs:all>
+                              <xs:element name="Code" minOccurs="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="12" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="PK" minOccurs="0" type="xs:string" />
+                            </xs:all>
+                            <xs:attribute name="Action" type="Action" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="ShippingLineAddress" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="25" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                        <xs:element name="OrgHeader" minOccurs="0">
+                          <xs:complexType>
+                            <xs:all>
+                              <xs:element name="Code" minOccurs="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="12" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="PK" minOccurs="0" type="xs:string" />
+                            </xs:all>
+                            <xs:attribute name="Action" type="Action" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="ReceivingForwarderAddress" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="25" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                        <xs:element name="OrgHeader" minOccurs="0">
+                          <xs:complexType>
+                            <xs:all>
+                              <xs:element name="Code" minOccurs="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="12" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="PK" minOccurs="0" type="xs:string" />
+                            </xs:all>
+                            <xs:attribute name="Action" type="Action" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="ArrivalUnpackCFSTransportAddress" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="25" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                        <xs:element name="OrgHeader" minOccurs="0">
+                          <xs:complexType>
+                            <xs:all>
+                              <xs:element name="Code" minOccurs="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="12" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="PK" minOccurs="0" type="xs:string" />
+                            </xs:all>
+                            <xs:attribute name="Action" type="Action" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="DeparturePackCFSTransportAddress" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="25" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                        <xs:element name="OrgHeader" minOccurs="0">
+                          <xs:complexType>
+                            <xs:all>
+                              <xs:element name="Code" minOccurs="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="12" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="PK" minOccurs="0" type="xs:string" />
+                            </xs:all>
+                            <xs:attribute name="Action" type="Action" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                </xs:all>
+                <xs:attribute name="Action" type="Action" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="JobConsolCostCollection" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="JobConsolCost" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:all>
+                  <xs:element name="PK" minOccurs="0" type="xs:string" />
+                  <xs:element name="Sequence" minOccurs="0" type="xs:int" />
+                  <xs:element name="InvoiceNum" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="InvoiceDate" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="OSCostAmount" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="OSGSTAmount" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="ExchangeRate" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="LocalCostAmount" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="PPDCLT" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ApportionmentMethod" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PaymentDate" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="PaymentType" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ChequeOrReference" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="IsForCollectInvoice" minOccurs="0" type="xs:boolean" />
+                  <xs:element name="ChargeCode" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                        <xs:element name="GlbCompany" minOccurs="0">
+                          <xs:complexType>
+                            <xs:all>
+                              <xs:element name="Code" minOccurs="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="3" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="PK" minOccurs="0" type="xs:string" />
+                            </xs:all>
+                            <xs:attribute name="Action" type="Action" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="Currency" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="Creditor" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="12" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="BankAccount" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="AccountNum" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="35" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="BSB" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="20" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                        <xs:element name="AccGLHeader" minOccurs="0">
+                          <xs:complexType>
+                            <xs:all>
+                              <xs:element name="AccountNum" minOccurs="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="10" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="PK" minOccurs="0" type="xs:string" />
+                            </xs:all>
+                            <xs:attribute name="Action" type="Action" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="ChequeBook" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="TaxRate" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="10" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="Country" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string" />
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                        <xs:element name="CountryExternal" minOccurs="0">
+                          <xs:complexType>
+                            <xs:all>
+                              <xs:element name="Code" minOccurs="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="2" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="PK" minOccurs="0" type="xs:string" />
+                            </xs:all>
+                            <xs:attribute name="Action" type="Action" />
+                            <xs:attribute name="TableName" type="xs:string" />
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element name="GlbCompany" minOccurs="0">
+                          <xs:complexType>
+                            <xs:all>
+                              <xs:element name="Code" minOccurs="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="3" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="PK" minOccurs="0" type="xs:string" />
+                            </xs:all>
+                            <xs:attribute name="Action" type="Action" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="ARInvoice" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Ledger" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="TransactionType" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="TransactionNum" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="20" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="TransactionCount" minOccurs="0" type="xs:short" />
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                        <xs:element name="GlbCompany" minOccurs="0">
+                          <xs:complexType>
+                            <xs:all>
+                              <xs:element name="Code" minOccurs="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="3" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="PK" minOccurs="0" type="xs:string" />
+                            </xs:all>
+                            <xs:attribute name="Action" type="Action" />
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element name="OrgHeader" minOccurs="0">
+                          <xs:complexType>
+                            <xs:all>
+                              <xs:element name="Code" minOccurs="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="12" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="PK" minOccurs="0" type="xs:string" />
+                            </xs:all>
+                            <xs:attribute name="Action" type="Action" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="APInvoice" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Ledger" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="TransactionType" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="TransactionNum" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="20" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="TransactionCount" minOccurs="0" type="xs:short" />
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                        <xs:element name="GlbCompany" minOccurs="0">
+                          <xs:complexType>
+                            <xs:all>
+                              <xs:element name="Code" minOccurs="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="3" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="PK" minOccurs="0" type="xs:string" />
+                            </xs:all>
+                            <xs:attribute name="Action" type="Action" />
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element name="OrgHeader" minOccurs="0">
+                          <xs:complexType>
+                            <xs:all>
+                              <xs:element name="Code" minOccurs="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="12" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="PK" minOccurs="0" type="xs:string" />
+                            </xs:all>
+                            <xs:attribute name="Action" type="Action" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="GlbCompany" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                    </xs:complexType>
+                  </xs:element>
+                </xs:all>
+                <xs:attribute name="Action" type="Action" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ProcessTasksCollection" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ProcessTasks" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:all>
+                  <xs:element name="PK" minOccurs="0" type="xs:string" />
+                  <xs:element name="TaskID" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Sequence" minOccurs="0" type="xs:int" />
+                  <xs:element name="Type" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Status" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ScheduledDate" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="EstDuration" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="ActualDate" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="ActualDuration" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="Description" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Notes" minOccurs="0" type="xs:base64Binary" />
+                  <xs:element name="MilestoneExceptionAdded" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="IsCalendarItem" minOccurs="0" type="xs:boolean" />
+                  <xs:element name="SuspendedAt" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="TotalSuspendedDuration" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="NonWorkHours" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="TaskCannotBeDeleted" minOccurs="0" type="xs:boolean" />
+                  <xs:element name="Condition1" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="AndOr" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Condition2" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ReferencedID" minOccurs="0" type="xs:string" />
+                  <xs:element name="ReferencedTableCode" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="2" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="IsPublished" minOccurs="0" type="xs:boolean" />
+                  <xs:element name="EstimatedDefaultedFrom" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="EstimatedDefaultTimeDelta" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="EstimatedDefaultFromPredecessor" minOccurs="0" type="xs:int" />
+                  <xs:element name="TriggerField" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="80" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ParentTemplateID" minOccurs="0" type="xs:string" />
+                  <xs:element name="ExceptionAddedUTC" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="ScheduledDateUTC" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="ActualDateUTC" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="SuspendedAtUTC" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="Condition2Value" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="AssignedStaffMember" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="LoginName" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="104" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="AssignedGroup" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="15" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="OrgAddress" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="25" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                        <xs:element name="OrgHeader" minOccurs="0">
+                          <xs:complexType>
+                            <xs:all>
+                              <xs:element name="Code" minOccurs="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="12" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="PK" minOccurs="0" type="xs:string" />
+                            </xs:all>
+                            <xs:attribute name="Action" type="Action" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="OrgContact" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="ContactName" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="50" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                        <xs:element name="OrgHeader" minOccurs="0">
+                          <xs:complexType>
+                            <xs:all>
+                              <xs:element name="Code" minOccurs="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="12" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="PK" minOccurs="0" type="xs:string" />
+                            </xs:all>
+                            <xs:attribute name="Action" type="Action" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="MilestoneEvent" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="TaskCompletionEvent" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="ExceptionEvent" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="OriginCountry" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="DestinationCountry" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="GlbCompany" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                    </xs:complexType>
+                  </xs:element>
+                </xs:all>
+                <xs:attribute name="Action" type="Action" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="JobDocAddressCollection" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="JobDocAddress" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:all>
+                  <xs:element name="PK" minOccurs="0" type="xs:string" />
+                  <xs:element name="AddressType" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Contact" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="AddressOverride" minOccurs="0" type="xs:boolean" />
+                  <xs:element name="CompanyName" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Address1" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Address2" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="City" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="25" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Postcode" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="State" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="25" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Phone" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Fax" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Email" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="128" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Mobile" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="AddressSequence" minOccurs="0" type="xs:short" />
+                  <xs:element name="GovRegNum" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="35" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="IsResidential" minOccurs="0" type="xs:boolean" />
+                  <xs:element name="GovRegNumType" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ScreeningStatus" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Address" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="25" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                        <xs:element name="OrgHeader" minOccurs="0">
+                          <xs:complexType>
+                            <xs:all>
+                              <xs:element name="Code" minOccurs="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="12" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="PK" minOccurs="0" type="xs:string" />
+                            </xs:all>
+                            <xs:attribute name="Action" type="Action" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="CountryCode" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                </xs:all>
+                <xs:attribute name="Action" type="Action" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CusEntryNumCollection" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="CusEntryNum" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:all>
+                  <xs:element name="PK" minOccurs="0" type="xs:string" />
+                  <xs:element name="EntryNum" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="35" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="EntryType" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="EntryLineReference" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="EntryIsSystemGenerated" minOccurs="0" type="xs:boolean" />
+                  <xs:element name="EntryStatus" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Category" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="IssueDate" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="ExpiryDate" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="CountryCode" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                </xs:all>
+                <xs:attribute name="Action" type="Action" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="JobDocsAndCartageCollection" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="JobDocsAndCartage" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:all>
+                  <xs:element name="PK" minOccurs="0" type="xs:string" />
+                  <xs:element name="FCLPickupEquipmentNeeded" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="EstimatedPickup" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="PickupRequiredBy" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="PickupCartageAdvised" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="ArrivalCartageRef" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PickupCartageCompleted" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="PickupLabourTime" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="PickupLabourCharge" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="DemurrageOnPickupTime" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="DemurrageOnPickupCharge" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="PrintOptionForPackagesOnAWB" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="FCLDeliveryEquipmentNeeded" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="FCLAvailable" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="FCLStorageCommences" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="LCLAvailable" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="LCLStorageCommences" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="LCLAirStorageDaysOrHours" minOccurs="0" type="xs:short" />
+                  <xs:element name="LCLAirStorageCharge" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="EstimatedDelivery" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="DeliveryRequiredBy" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="DeliveryCartageAdvised" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="DeliveryCartageCompleted" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="DeliveryLabourTime" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="DeliveryLabourCharge" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="DemurrageOnDeliveryTime" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="DemurrageOnDeliveryCharge" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="HasProhibitedPackaging" minOccurs="0" type="xs:boolean" />
+                  <xs:element name="InsuranceRequired" minOccurs="0" type="xs:boolean" />
+                  <xs:element name="IsContingencyRelease" minOccurs="0" type="xs:boolean" />
+                  <xs:element name="CustomAttrib1" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="15" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CustomAttrib2" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="15" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CustomDate1" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="CustomDate2" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="CustomDecimal1" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="CustomDecimal2" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="CustomFlag1" minOccurs="0" type="xs:boolean" />
+                  <xs:element name="CustomFlag2" minOccurs="0" type="xs:boolean" />
+                  <xs:element name="LCLDatesOverrideConsol" minOccurs="0" type="xs:boolean" />
+                  <xs:element name="ExportStatement" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PickupCartageCoAddr" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="25" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                        <xs:element name="OrgHeader" minOccurs="0">
+                          <xs:complexType>
+                            <xs:all>
+                              <xs:element name="Code" minOccurs="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="12" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="PK" minOccurs="0" type="xs:string" />
+                            </xs:all>
+                            <xs:attribute name="Action" type="Action" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="DeliveryCartageCoAddr" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="25" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                        <xs:element name="OrgHeader" minOccurs="0">
+                          <xs:complexType>
+                            <xs:all>
+                              <xs:element name="Code" minOccurs="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="12" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="PK" minOccurs="0" type="xs:string" />
+                            </xs:all>
+                            <xs:attribute name="Action" type="Action" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="JobOrderItemCollection" minOccurs="0">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="JobOrderItem" minOccurs="0" maxOccurs="unbounded">
+                          <xs:complexType>
+                            <xs:all>
+                              <xs:element name="PK" minOccurs="0" type="xs:string" />
+                              <xs:element name="OrderReference" minOccurs="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="25" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="Sequence" minOccurs="0" type="xs:int" />
+                            </xs:all>
+                            <xs:attribute name="Action" type="Action" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:all>
+                <xs:attribute name="Action" type="Action" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="JobOrderHeaderCollection" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="JobOrderHeader" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:all>
+                  <xs:element name="PK" minOccurs="0" type="xs:string" />
+                  <xs:element name="IsCancelled" minOccurs="0" type="xs:boolean" />
+                  <xs:element name="FirstBuyerContact" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="35" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="SecondBuyerContact" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="35" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="OrderNumber" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="35" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="OrderNumberSplit" minOccurs="0" type="xs:short" />
+                  <xs:element name="OrderDate" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="OrderStatus" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="OrderGoodsDescription" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="35" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TransportMode" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ContainerMode" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="BookingConfRef" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="35" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="BookingConfDate" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="ExWorksRequiredBy" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="DeliveryRequiredBy" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="QuoteNumber" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="InvoiceNumber" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="35" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="InvoiceDate" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="EstimatedExchangeRate" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="IncoTerm" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="AdditionalTerms" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DepartureVoyage" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DepartureVesselCutoffDate" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="IntermediateVoyage" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ArrivalVoyage" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ActualVolume" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="UnitOfVolume" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="2" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ActualWeight" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="UnitOfWeight" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="2" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Waybill" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="35" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="MasterWaybill" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="35" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Packs" minOccurs="0" type="xs:int" />
+                  <xs:element name="PackType" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="E_EXW" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="A_EXW" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="E_IST" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="A_IST" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="E_ARV_2ndIntermediate" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="E_ARV_1stIntermediate" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="E_DEP_2" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="E_DEP_3" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="E_RCV" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="E_DEP" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="E_ARV" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="E_CCC" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="E_CLR" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="E_UNP" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="E_PUP" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="EstimateUserDate1" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="EstimateUserDate2" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="EstimateUserDate3" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="EstimateUserDate4" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="A_RCV" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="A_DEP" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="A_ARV" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="A_CCC" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="A_CLR" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="A_UNP" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="A_PUP" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="ActualUserDate1" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="ActualUserDate2" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="ActualUserDate3" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="ActualUserDate4" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="FollowUpDate" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="CustomAttrib1" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="15" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CustomAttrib2" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="15" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CustomAttrib3" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="15" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CustomAttrib4" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="35" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CustomAttrib5" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="35" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CustomDate1" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="CustomDate2" minOccurs="0" type="emptiableDateTime" />
+                  <xs:element name="CustomDecimal1" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="CustomDecimal2" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="CustomDecimal3" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="CustomDecimal4" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="CustomDecimal5" minOccurs="0" type="xs:decimal" />
+                  <xs:element name="CustomFlag1" minOccurs="0" type="xs:boolean" />
+                  <xs:element name="CustomFlag2" minOccurs="0" type="xs:boolean" />
+                  <xs:element name="CustomFlag3" minOccurs="0" type="xs:boolean" />
+                  <xs:element name="CustomFlag4" minOccurs="0" type="xs:boolean" />
+                  <xs:element name="CustomFlag5" minOccurs="0" type="xs:boolean" />
+                  <xs:element name="OrderType" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Legacy_Support" minOccurs="0" type="xs:boolean" />
+                  <xs:element name="End_Legacy_Support" minOccurs="0" type="xs:boolean" />
+                  <xs:element name="Buyer" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="12" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="Supplier" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="12" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="ServiceLevel_NI" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="GoodsAvailableAt" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="5" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="PortOfLoading" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="5" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="PortOfDischarge" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="5" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="GoodsDeliveredTo" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="5" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="DepartureVessel" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="35" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="IntermediateVessel" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="35" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="ArrivalVessel" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="35" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="Carrier" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="12" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="SendingAgent" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="12" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="ReceivingAgent" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="12" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="DeliverAddress_NI" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="25" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                        <xs:element name="OrgHeader" minOccurs="0">
+                          <xs:complexType>
+                            <xs:all>
+                              <xs:element name="Code" minOccurs="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="12" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="PK" minOccurs="0" type="xs:string" />
+                            </xs:all>
+                            <xs:attribute name="Action" type="Action" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="PickupAddress_NI" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="25" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                        <xs:element name="OrgHeader" minOccurs="0">
+                          <xs:complexType>
+                            <xs:all>
+                              <xs:element name="Code" minOccurs="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="12" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="PK" minOccurs="0" type="xs:string" />
+                            </xs:all>
+                            <xs:attribute name="Action" type="Action" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="JobDeclaration" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="CountryOfSupply" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="2" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="ShipmentPrePlanning" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="OrderCurrency" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="PackTypeExternal" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="3" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                </xs:all>
+                <xs:attribute name="Action" type="Action" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GenCustomAddOnValueCollection" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="GenCustomAddOnValue" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:all>
+                  <xs:element name="PK" minOccurs="0" type="xs:string" />
+                  <xs:element name="Name" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="32" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Type" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Data" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="IsRuleEnabled" minOccurs="0" type="xs:boolean" />
+                  <xs:element name="Rule" minOccurs="0">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="Code" minOccurs="0">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="35" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="PK" minOccurs="0" type="xs:string" />
+                      </xs:all>
+                      <xs:attribute name="Action" type="Action" />
+                      <xs:attribute name="TableName" type="xs:string" />
+                    </xs:complexType>
+                  </xs:element>
+                </xs:all>
+                <xs:attribute name="Action" type="Action" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:all>
+    <xs:attribute name="Action" type="Action" />
+  </xs:complexType>
+</xs:schema>

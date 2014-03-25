@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EB213C22-B408-41C5-9DC9-BEA9DAE8925E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OTE.eAdapter.DataTypes</RootNamespace>
+    <AssemblyName>OTE.eAdapter.DataTypes</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ediEnterprise XSD%27s\eAdapterDataTypesInterchange.cs" />
+    <Compile Include="Exceptions\eAdapterHeaderException.cs" />
+    <Compile Include="Partials\eAdapterDataTypesInterchangePartial.cs" />
+    <Compile Include="Partials\eAdapterDataTypesNativePartial.cs" />
+    <Compile Include="Partials\eAdapterDataTypesUniversalPartial.cs" />
+    <Compile Include="Exceptions\eAdapterFormatException.cs" />
+    <Compile Include="eAdapterMessageHeader.cs" />
+    <Compile Include="Exceptions\eAdapterProcessorException.cs" />
+    <Compile Include="Interfaces\IeAdapterMessageProcessor.cs" />
+    <Compile Include="Factory\NativeCriteriaGroup.cs" />
+    <Compile Include="Factory\Enum.cs" />
+    <Compile Include="Factory\eAdapterDataTypesFactory.cs" />
+    <Compile Include="ediEnterprise XSD%27s\eAdapterDataTypesNative.cs" />
+    <Compile Include="ediEnterprise XSD%27s\eAdapterDataTypesUniversal.cs" />
+    <Compile Include="Interfaces\IToXml.cs" />
+    <Compile Include="Factory\NativeCriteria.cs" />
+    <Compile Include="Factory\NativeRequest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ediEnterprise XSD%27s\Billing.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ediEnterprise XSD%27s\Declaration.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ediEnterprise XSD%27s\Elements.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ediEnterprise XSD%27s\Event.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ediEnterprise XSD%27s\ExportAWBHeader.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ediEnterprise XSD%27s\FinancialInvoice.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ediEnterprise XSD%27s\FinancialInvoiceLine.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ediEnterprise XSD%27s\Invoice.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ediEnterprise XSD%27s\Native.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ediEnterprise XSD%27s\NativeAirline.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ediEnterprise XSD%27s\NativeCommodityCode.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ediEnterprise XSD%27s\NativeCompany.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ediEnterprise XSD%27s\NativeContainer.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ediEnterprise XSD%27s\NativeCountry.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ediEnterprise XSD%27s\NativeCurrencyExchangeRate.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ediEnterprise XSD%27s\NativeDangerousGood.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ediEnterprise XSD%27s\NativeOrganization.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ediEnterprise XSD%27s\NativeServiceLevel.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ediEnterprise XSD%27s\NativeShipment.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ediEnterprise XSD%27s\NativeStaff.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ediEnterprise XSD%27s\NativeUNLOCO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ediEnterprise XSD%27s\NativeVessel.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ediEnterprise XSD%27s\Order.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ediEnterprise XSD%27s\Shipment.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ediEnterprise XSD%27s\UniversalCommon.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ediEnterprise XSD%27s\UniversalEvent.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ediEnterprise XSD%27s\UniversalShipment.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ediEnterprise XSD%27s\UniversalTransaction.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ediEnterprise XSD%27s\UniversalTransactionBatch.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ediEnterprise XSD%27s\XMLInterchange.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExtensionMethods\ExtensionMethods.csproj">
+      <Project>{F11D7CC0-0BFC-47F3-A8BF-9A6A9A3E0BEE}</Project>
+      <Name>ExtensionMethods</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

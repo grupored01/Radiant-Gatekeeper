@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6B82A221-3B83-427C-856A-815FEDCF4E9B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OTE.eAdapter</RootNamespace>
+    <AssemblyName>OTE.eAdapter.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CargoWise.eHub.Adapter">
+      <HintPath>..\References\CargoWise.eHub.Adapter.dll</HintPath>
+    </Reference>
+    <Reference Include="CargoWise.eHub.Common">
+      <HintPath>..\References\CargoWise.eHub.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="eAdapterClient.cs" />
+    <Compile Include="eAdapterClientSingleton.cs" />
+    <Compile Include="eAdapterHttpConfiguration.cs" />
+    <Compile Include="eAdapterHttpsConfiguration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\NativeDataServiceTest\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\NativeDataService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\DataSources\System.Xml.Linq.XElement.datasource" />
+    <None Include="Service References\NativeDataServiceTest\EnterpriseNativeDataService.wsdl" />
+    <None Include="Service References\NativeDataServiceTest\EnterpriseNativeDataService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NativeDataServiceTest\EnterpriseNativeDataService1.wsdl" />
+    <None Include="Service References\NativeDataServiceTest\EnterpriseNativeDataService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NativeDataServiceTest\EnterpriseNativeDataService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NativeDataService\EnterpriseNativeDataService.wsdl" />
+    <None Include="Service References\NativeDataService\EnterpriseNativeDataService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NativeDataService\EnterpriseNativeDataService1.wsdl" />
+    <None Include="Service References\NativeDataService\EnterpriseNativeDataService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NativeDataService\EnterpriseNativeDataService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\NativeDataServiceTest\" />
+    <WCFMetadataStorage Include="Service References\NativeDataService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NativeDataServiceTest\EnterpriseNativeDataService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NativeDataServiceTest\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NativeDataServiceTest\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NativeDataServiceTest\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NativeDataService\EnterpriseNativeDataService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NativeDataService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NativeDataService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NativeDataService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

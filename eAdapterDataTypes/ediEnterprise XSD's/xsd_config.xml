@@ -1,0 +1,19 @@
+<xsd xmlns='http://microsoft.com/dotnet/tools/xsd/'>
+<generateClasses options='none' language='CS' namespace='OTE.eAdapter.DataTypes.Native'>
+	<schema>Native.xsd</schema>
+	<schema>NativeAirline.xsd</schema>
+	<schema>NativeCommodityCode.xsd</schema>
+  <schema>NativeCompany.xsd</schema>
+	<schema>NativeContainer.xsd</schema>
+	<schema>NativeCountry.xsd</schema>
+	<schema>NativeCurrencyExchangeRate.xsd</schema>
+	<schema>NativeDangerousGood.xsd</schema>
+	<schema>NativeOrganization.xsd</schema>
+  <schema>NativeServiceLevel.xsd</schema>
+  <schema>NativeShipment.xsd</schema>
+	<schema>NativeStaff.xsd</schema>
+	<schema>NativeUNLOCO.xsd</schema>
+	<schema>NativeVessel.xsd</schema>
+	<schema>UniversalCommon.xsd</schema>
+</generateClasses>
+</xsd>

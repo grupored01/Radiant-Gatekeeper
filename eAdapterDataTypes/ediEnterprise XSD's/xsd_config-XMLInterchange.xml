@@ -1,0 +1,15 @@
+<xsd xmlns='http://microsoft.com/dotnet/tools/xsd/'>
+<generateClasses options='none' language='CS' namespace='OTE.eAdapter.DataTypes.Interchange'>
+	<schema>Elements.xsd</schema>
+  <schema>XMLInterchange.xsd</schema>
+  <schema>Shipment.xsd</schema>
+  <schema>Invoice.xsd</schema>
+  <schema>Order.xsd</schema>
+  <schema>Event.xsd</schema>
+  <schema>FinancialInvoice.xsd</schema>
+  <schema>FinancialInvoiceLine.xsd</schema>  
+  <schema>Billing.xsd</schema>
+  <schema>Declaration.xsd</schema>
+  <schema>ExportAWBHeader.xsd</schema>
+</generateClasses>
+</xsd>
