@@ -13,11 +13,12 @@ namespace Gatekeeper
     [ServiceContract]
     public interface IService1
     {
-        //Commnet
+        //Comment
         [OperationContract]
         [WebInvoke(UriTemplate = "checkHeartbeat", Method = "GET", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped)]
         ping checkHeartbeat();
 
+        //Comment2
         [OperationContract]
         [WebInvoke(UriTemplate = "getUser", Method = "GET", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped)]
         List<StaffData> getUser(string userCode);//getUser(string userCode);
