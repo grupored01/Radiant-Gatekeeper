@@ -28,7 +28,7 @@ namespace WcfRadiant
         /// <param name="userCode">Receive a user code.</param>
         /// <returns>Return a user data structure.</returns>
         public List<StaffData> getUser(string userCode)//userData getUser(string userCode)
-        {
+        {            
             NativeRequest request = new NativeRequest(NativeType.Staff);
 
             List<NativeCriteria> criteria = new List<NativeCriteria>();

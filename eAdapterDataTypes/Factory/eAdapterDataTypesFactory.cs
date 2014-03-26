@@ -99,7 +99,7 @@
         public static string CreateNativeOrganizationRequest(string pOrganizationCode)
         {
             NativeRequest request = new NativeRequest(NativeType.Organization);
-
+            
             request.ConditionGroups.Add(new NativeCriteriaGroup("OrgHeader", "Code", pOrganizationCode));
 
             return request.ToXml();
